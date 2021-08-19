@@ -1,7 +1,30 @@
 @import "./variables";
 
 @mixin page {
-  width: 100%;
-  min-height: 100vh;
-  color: $light;
+	position: relative;
+	width: 100%;
+	max-width: 550px; //corregir
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: 2rem;
+	background: $darker;
+	color: $white;
+
+	&__title {
+		display: block;
+		margin-bottom: 1rem;
+		text-align: center;
+		font-size: 2rem;
+		font-weight: 600;
+	}
+
+	&__spacer{
+		display: block;
+		width: 100%;
+		height: 4rem;
+
+		&--big{
+			height: 11rem;
+		}
+	}
 }

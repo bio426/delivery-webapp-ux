@@ -1,0 +1,53 @@
+@import "../mixins";
+@import "../variables";
+
+.cart {
+	@include page;
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	&__total {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 20vh;
+    padding: 1rem 4rem;
+		background: $dark;
+		border-radius: 3rem 3rem 0 0;
+		box-shadow: 0 0 0.4rem rgba($color: #000000, $alpha: 0.5);
+    font-size: 1.2rem;
+    font-weight: 500;
+	}
+
+  &__price{
+    float: right;
+    font-weight: 600;
+  }
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+  }
+
+  &__button{
+    width: 40%;
+    padding: .8rem;
+    background: none;
+    color: $white;
+    border: 1px solid $red;
+    border-radius: 2rem;
+    cursor: pointer;
+
+    &--active{
+      background: $red;
+      box-shadow: 0 0 .5rem rgba($color: $red, $alpha: 1);
+    }
+  }
+}

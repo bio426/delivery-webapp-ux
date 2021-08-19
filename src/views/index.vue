@@ -9,6 +9,7 @@
 		<div class="index__products">
 			<Product v-for="i in 10" :key="i" />
 		</div>
+		<div class="index__spacer"></div>
 		<Navigation />
 	</div>
 </template>

@@ -1,41 +1,30 @@
 @import "../mixins";
 @import "../variables";
 
-.index{
-  @include page;
+.index {
+	@include page;
 
-  padding: 2rem;
-  background: $darker;
+	&__categories {
+		display: flex;
+		justify-content: space-around;
+	}
 
-  &__title{
-    display: block;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
-  }
+	&__category {
+		background: none;
+		color: $light;
+		border: none;
+		font-size: 1rem;
+		font-weight: 900;
 
-  &__categories{
-    display: flex;
-    justify-content: space-around;
-  }
+		&--active {
+			color: $red;
+		}
+	}
 
-  &__category{
-    background: none;
-    color: $soft;
-    border: none;
-    font-size: 1rem;
-    font-weight: 900;
-
-    &--active{
-      color: $red;
-    }
-  }
-
-  &__products{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
+	&__products {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
 }

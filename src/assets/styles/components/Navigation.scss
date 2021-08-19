@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-around;
   width: 90%;
+  max-width: 550px; //corregir
   padding: 1.5rem;
   background: $dark;
   border-radius: 3rem 3rem 0 0;
@@ -15,7 +16,6 @@
 
   &__link{
     position: relative;
-    color: $light;
     text-decoration: none;
   }
 
@@ -38,6 +38,8 @@
     width: 1.4rem;
     height: 1.4rem;
     background: $red;
+    color: $white;
+    border: 1px solid $dark;
     border-radius: 50%;
     font-size: .9rem;
   }

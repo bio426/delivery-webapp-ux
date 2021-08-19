@@ -1,14 +1,24 @@
 <template>
 	<nav class="Navigation">
 		<router-link to="/" class="Navigation__link">
-			<svg class="Navigation__vector Navigation__vector--active" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+			<svg
+				class="Navigation__vector"
+				:class="route.path == '/' ? 'Navigation__vector--active' : ''"
+				viewBox="0 0 512 512"
+				xmlns="http://www.w3.org/2000/svg"
+			>
 				<path
 					d="m498.195312 222.695312c-.011718-.011718-.023437-.023437-.035156-.035156l-208.855468-208.847656c-8.902344-8.90625-20.738282-13.8125-33.328126-13.8125-12.589843 0-24.425781 4.902344-33.332031 13.808594l-208.746093 208.742187c-.070313.070313-.140626.144531-.210938.214844-18.28125 18.386719-18.25 48.21875.089844 66.558594 8.378906 8.382812 19.445312 13.238281 31.277344 13.746093.480468.046876.964843.070313 1.453124.070313h8.324219v153.699219c0 30.414062 24.746094 55.160156 55.167969 55.160156h81.710938c8.28125 0 15-6.714844 15-15v-120.5c0-13.878906 11.289062-25.167969 25.167968-25.167969h48.195313c13.878906 0 25.167969 11.289063 25.167969 25.167969v120.5c0 8.285156 6.714843 15 15 15h81.710937c30.421875 0 55.167969-24.746094 55.167969-55.160156v-153.699219h7.71875c12.585937 0 24.421875-4.902344 33.332031-13.808594 18.359375-18.371093 18.367187-48.253906.023437-66.636719zm0 0"
 				/>
 			</svg>
 		</router-link>
-		<router-link to="" class="Navigation__link">
-			<svg class="Navigation__vector" viewBox="-42 0 512 512.002" xmlns="http://www.w3.org/2000/svg">
+		<router-link to="/user" class="Navigation__link">
+			<svg
+				class="Navigation__vector"
+				:class="route.path == '/user' ? 'Navigation__vector--active' : ''"
+				viewBox="-42 0 512 512.002"
+				xmlns="http://www.w3.org/2000/svg"
+			>
 				<path
 					d="m210.351562 246.632812c33.882813 0 63.222657-12.152343 87.195313-36.128906 23.972656-23.972656 36.125-53.304687 36.125-87.191406 0-33.875-12.152344-63.210938-36.128906-87.191406-23.976563-23.96875-53.3125-36.121094-87.191407-36.121094-33.886718 0-63.21875 12.152344-87.191406 36.125s-36.128906 53.308594-36.128906 87.1875c0 33.886719 12.15625 63.222656 36.132812 87.195312 23.976563 23.96875 53.3125 36.125 87.1875 36.125zm0 0"
 				/>
@@ -17,8 +27,13 @@
 				/>
 			</svg>
 		</router-link>
-		<router-link to="" class="Navigation__link">
-			<svg class="Navigation__vector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.029 456.029">
+		<router-link to="/cart" class="Navigation__link">
+			<svg
+				class="Navigation__vector"
+				:class="route.path == '/cart' ? 'Navigation__vector--active' : ''"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 456.029 456.029"
+			>
 				<path
 					d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"
 				/>
@@ -29,18 +44,22 @@
 					d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"
 				/>
 			</svg>
-      <span class="Navigation__cartCount">
-        99
-      </span>
+			<span class="Navigation__cartCount"> 99 </span>
 		</router-link>
 	</nav>
 </template>
 
 <script>
+import { useRoute } from "vue-router"
+
 export default {
 	name: "Navigation",
 	setup() {
-		return {}
+		const route = useRoute()
+
+		return {
+			route,
+		}
 	},
 }
 </script>
