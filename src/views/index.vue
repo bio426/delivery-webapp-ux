@@ -1,5 +1,6 @@
 <template>
 	<div class="index">
+		<Header />
 		<span class="index__title">Menu</span>
 		<div class="index__categories">
 			<button class="index__category index__category--active">Popular</button>
@@ -15,12 +16,14 @@
 </template>
 
 <script>
+import Header from "@/components/Header.vue"
 import Navigation from "@/components/Navigation.vue"
 import Product from "@/components/Product.vue"
 
 export default {
 	name: "index",
 	components: {
+		Header,
 		Navigation,
 		Product
 	},

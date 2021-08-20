@@ -13,9 +13,11 @@
 
 	&__total {
 		position: fixed;
-		left: 0;
+		left: 50%;
+    transform: translate(-50%);
 		bottom: 0;
 		width: 100%;
+    max-width: $maxWidth;
 		height: 20vh;
     padding: 1rem 4rem;
 		background: $dark;

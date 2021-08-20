@@ -4,4 +4,84 @@
 
 .detail{
   @include page;
+
+  &__image{
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  &__name{
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__price{
+    float: right;
+    font-size: 1.8rem;
+  }
+
+  &__tag{
+    display: block;
+    margin: .6rem 0;
+    color: $light;
+    font-size: .9rem;
+
+    &--size{
+      display: inline-block;
+      margin-right: .6rem;
+    }
+  }
+
+  &__info{
+    color: $white;
+  }
+
+  &__container{
+    display: flex;
+    justify-content: space-around;
+    height: 3rem;
+    margin: 1rem 0;
+    padding: 0 2rem;
+    // border: 1px solid red;
+    border-radius: 1.5rem;
+
+    &--switches{
+      padding: 0;
+    }
+
+    &--quantity{
+      align-items: center;
+      width: 40%;
+      margin: 0;
+      padding: 0;
+      border: 1px solid $light;
+    }
+  }
+
+  &__button{
+    // flex: 1;
+    background: none;
+    color: $light;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &--quantity{
+      font-size: 1.4rem;
+    }
+
+    &--active{
+      width: 40%;
+      background: $red;
+      color: $white;
+      border-radius: 1rem;
+      box-shadow: 0 0 .5rem rgba($color: $red, $alpha: 1);
+    }
+  }
+
+  &__quantity{
+    color: $light;
+  }
 }

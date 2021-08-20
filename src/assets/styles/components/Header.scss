@@ -1,0 +1,25 @@
+@import "../variables";
+
+.Header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo{
+    width: 4rem;
+    height: auto;
+  }
+
+  &__button{
+    width: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__menu{
+    display: block;
+    width: 100%;
+    fill: $white;
+  }
+}

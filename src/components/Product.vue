@@ -1,5 +1,5 @@
 <template>
-  <div class="Product">
+  <div class="Product" @click="goTo">
     <img class="Product__image" src="@/assets/images/product.png" alt="product image">
     <span class="Product__name">Product name</span>
     <button class="Product__add">+</button>
@@ -11,10 +11,20 @@
 </template>
 
 <script>
+import {useRouter} from "vue-router"
+
 export default {
   name: "Product",
   setup(){
+    const router = useRouter()
 
+    function goTo(){
+      router.push("/detail")
+    }
+
+    return {
+      goTo
+    }
   }
 }
 </script>
