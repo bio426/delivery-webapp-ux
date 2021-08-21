@@ -44,11 +44,12 @@
     height: 3rem;
     margin: 1rem 0;
     padding: 0 2rem;
-    // border: 1px solid red;
     border-radius: 1.5rem;
 
     &--switches{
+      overflow: hidden;
       padding: 0;
+      background: $dark;
     }
 
     &--quantity{
@@ -60,17 +61,32 @@
     }
   }
 
+  &__label{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $light;
+    border: 1px solid $darker;
+    cursor: pointer;
+  }
+
+  &__radio{
+    display: none;
+    visibility: hidden;
+
+    &:checked + label{
+      background: $red;
+      color: $white;
+    }
+  }
+
   &__button{
-    // flex: 1;
     background: none;
     color: $light;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
-
-    &--quantity{
-      font-size: 1.4rem;
-    }
+    font-size: 1.4rem;
 
     &--active{
       width: 40%;
@@ -78,6 +94,7 @@
       color: $white;
       border-radius: 1rem;
       box-shadow: 0 0 .5rem rgba($color: $red, $alpha: 1);
+      font-size: 1rem;
     }
   }
 

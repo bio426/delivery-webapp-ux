@@ -1,6 +1,8 @@
 <template>
 	<header class="Header">
-		<img class="Header__logo" src="@/assets/images/logo.png" alt="main logo" />
+		<router-link  to="/">
+			<img class="Header__logo" src="@/assets/images/logo.png" alt="main logo" />
+		</router-link>
 		<button class="Header__button">
 			<svg class="Header__menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 				<g>

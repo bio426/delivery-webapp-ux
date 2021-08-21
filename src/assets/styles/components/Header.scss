@@ -4,6 +4,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: $maxWidth;
+  height: $headerHeight;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background: $darker;
 
   &__logo{
     width: 4rem;

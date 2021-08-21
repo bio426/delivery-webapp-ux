@@ -6,6 +6,8 @@ const routes = [
 	{ path: "/cart", name: "cart", component: () => import("@/views/cart.vue") },
 	{ path: "/user", name: "user", component: () => import("@/views/user.vue") },
 	{ path: "/detail", name: "detail", component: () => import("@/views/detail.vue") },
+	{ path: "/about", name: "about", component: () => import("@/views/about.vue") },
+	{ path: "/delivery", name: "delivery", component: () => import("@/views/delivery.vue") },
 ]
 
 const router = createRouter({

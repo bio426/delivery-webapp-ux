@@ -1,14 +1,34 @@
 <template>
-  <router-view />
+	<Header />
+	<router-view />
+	<Navigation />
+	<Sidebar v-if="false" />
 </template>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap');
+<script>
+import Header from "@/components/Header.vue"
+import Navigation from "@/components/Navigation.vue"
+import Sidebar from "@/components/Sidebar.vue"
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+export default {
+	components: {
+		Header,
+		Navigation,
+		Sidebar
+	},
+	setup() {
+		return {}
+	},
+}
+</script>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
 }
 </style>

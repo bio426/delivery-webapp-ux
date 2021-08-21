@@ -13,18 +13,12 @@
       <button class="user__button user__button--active">Edit</button>
     </div>
     <div class="user__spacer"></div>
-    <Navigation />
   </div>
 </template>
 
 <script>
-import Navigation from "@/components/Navigation.vue"
-
 export default {
   name: "user",
-  components:{
-    Navigation
-  },
   setup(){
 
   }

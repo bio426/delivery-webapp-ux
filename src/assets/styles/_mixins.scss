@@ -4,9 +4,10 @@
 	position: relative;
 	width: 100%;
 	max-width: $maxWidth;
-	min-height: 100vh;
+	min-height: calc(100vh - #{$headerHeight});
 	margin: 0 auto;
 	padding: 2rem;
+	padding-top: 0;
 	background: $darker;
 	color: $white;
 
@@ -18,13 +19,29 @@
 		font-weight: 600;
 	}
 
-	&__spacer{
+	&__spacer {
 		display: block;
 		width: 100%;
 		height: 4rem;
 
-		&--big{
+		&--big {
 			height: 11rem;
 		}
 	}
+}
+
+@mixin backButton {
+	position: absolute;
+	bottom: 8rem;
+	left: 50%;
+	transform: translate(-50%);
+	width: 10rem;
+	padding: 1rem;
+	background: $red;
+	color: $white;
+	border: none;
+	border-radius: 1.5rem;
+	box-shadow: 0 0 0.5rem rgba($color: $red, $alpha: 1);
+	cursor: pointer;
+	font-size: 1rem;
 }

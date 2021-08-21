@@ -13,18 +13,15 @@
 			</div>
 		</div>
 		<div class="cart__spacer cart__spacer--big"></div>
-		<Navigation />
 	</div>
 </template>
 
 <script>
-import Navigation from "@/components/Navigation.vue"
 import Item from "@/components/Item.vue"
 
 export default {
 	name: "cart",
 	components: {
-		Navigation,
 		Item
 	},
 	setup() {

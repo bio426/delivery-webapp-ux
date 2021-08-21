@@ -1,0 +1,42 @@
+@import "../mixins";
+@import "../variables";
+
+.about{
+  @include page;
+
+  &__container{
+    padding: 3rem 2rem;
+    background: $dark;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 .4rem rgba($color: #000000, $alpha: .5);
+
+    &--links{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  &__description{
+    color: $white;
+  }
+
+  &__link{
+    display: block;
+    padding: .8rem;
+    background: $dark;
+    border-radius: .5rem;
+  }
+
+  &__ico{
+    width: 1.2rem;
+    height: auto;
+    fill: $white;
+  }
+
+  &__back{
+    @include backButton;
+  }
+}

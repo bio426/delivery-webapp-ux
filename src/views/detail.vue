@@ -18,36 +18,34 @@
 		<span class="detail__tag detail__tag--size">Size:</span>
 		<span class="detail__info">999 grams</span>
 		<div class="detail__container detail__container--switches">
-			<button class="detail__button">8 pieces</button>
-			<button class="detail__button">10 pieces</button>
+			<input class="detail__radio" type="radio" name="size" id="a1" checked />
+			<label class="detail__label" for="a1"> 6 pieces </label>
+			<input class="detail__radio" type="radio" name="size" id="a2" />
+			<label class="detail__label" for="a2"> 8 pieces </label>
+			<input class="detail__radio" type="radio" name="size" id="a3" />
+			<label class="detail__label" for="a3"> 10 pieces </label>
 		</div>
 		<div class="detail__container detail__container--switches">
-			<button class="detail__button">Small</button>
-			<button class="detail__button">Medium</button>
-			<button class="detail__button">Large</button>
+			<input class="detail__radio" type="radio" name="type" id="b1" checked />
+			<label class="detail__label" for="b1"> Standart </label>
+			<input class="detail__radio" type="radio" name="type" id="b2" />
+			<label class="detail__label" for="b2"> Thin </label>
 		</div>
 		<span class="detail__tag">Small - 33cm | Medium - 44cm | Large - 55cm</span>
 		<div class="detail__container">
 			<div class="detail__container detail__container--quantity">
-				<button class="detail__button detail__button--quantity">-</button>
+				<button class="detail__button">-</button>
 				<span class="detail__quantity">99</span>
-				<button class="detail__button detail__button--quantity">+</button>
+				<button class="detail__button">+</button>
 			</div>
 			<button class="detail__button detail__button--active">Add</button>
 		</div>
-		<div class="detail__spacer"></div>
-		<Navigation />
 	</div>
 </template>
 
 <script>
-import Navigation from "@/components/Navigation.vue"
-
 export default {
 	name: "detail",
-	components: {
-		Navigation,
-	},
 	setup() {},
 }
 </script>
