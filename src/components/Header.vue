@@ -3,7 +3,7 @@
 		<router-link  to="/">
 			<img class="Header__logo" src="@/assets/images/logo.png" alt="main logo" />
 		</router-link>
-		<button class="Header__button">
+		<button class="Header__button" @click="emitToogleSidebar">
 			<svg class="Header__menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 				<g>
 					<path
@@ -25,6 +25,15 @@
 <script>
 export default {
 	name: "Header",
+	setup(props,ctx){
+		function emitToogleSidebar(){
+			ctx.emit("toogleSidebar")
+		}
+
+		return {
+			emitToogleSidebar
+		}
+	}
 }
 </script>
 

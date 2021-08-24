@@ -4,9 +4,10 @@
 .Sidebar{
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: $maxWidth;
+  height: 100vh;
   background: rgba($color: #000000, $alpha: .3);
   pointer-events: none; // cambiar al activar sidebar
 
@@ -55,11 +56,19 @@
   }
 
   &__link{
+    display: flex;
+    align-items: center;
     width: 100%;
     margin: .8rem;
     color: $white;
     text-decoration: none;
     font-size: 1.5rem;
+
+    &--exit{
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
   }
 
   &__ico{

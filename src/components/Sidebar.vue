@@ -11,7 +11,7 @@
 			</div>
 			<hr class="Sidebar__spacer" />
 			<div class="Sidebar__links">
-				<a class="Sidebar__link" href="">
+				<router-link class="Sidebar__link" to="/user" @click="emitHideSidebar">
 					<svg
 						class="Sidebar__ico"
 						viewBox="-42 0 512 512.002"
@@ -25,8 +25,8 @@
 						/>
 					</svg>
 					Account
-				</a>
-				<a class="Sidebar__link" href="">
+				</router-link>
+				<router-link class="Sidebar__link" to="/delivery" @click="emitHideSidebar">
 					<svg
 						class="Sidebar__ico"
 						viewBox="-42 0 512 512.002"
@@ -40,8 +40,8 @@
 						/>
 					</svg>
 					Delivery
-				</a>
-				<a class="Sidebar__link" href="">
+				</router-link>
+				<router-link class="Sidebar__link" to="/about" @click="emitHideSidebar">
 					<svg
 						class="Sidebar__ico"
 						viewBox="-42 0 512 512.002"
@@ -55,8 +55,8 @@
 						/>
 					</svg>
 					About
-				</a>
-				<a class="Sidebar__link" href="">
+				</router-link>
+				<button class="Sidebar__link Sidebar__link--exit" @click="emitHideSidebar">
 					<svg
 						class="Sidebar__ico"
 						viewBox="-42 0 512 512.002"
@@ -70,7 +70,7 @@
 						/>
 					</svg>
 					Exit
-				</a>
+				</button>
 			</div>
 		</div>
 	</aside>
@@ -79,6 +79,15 @@
 <script>
 export default {
 	name: "Sidebar",
+	setup(props,ctx){
+		function emitHideSidebar(){
+			ctx.emit("hideSidebar")
+		}
+
+		return {
+			emitHideSidebar
+		}
+	}
 }
 </script>
 

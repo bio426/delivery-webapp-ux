@@ -1,11 +1,13 @@
 <template>
-	<Header />
+	<Header @toogleSidebar="toogleSidebar" />
 	<router-view />
 	<Navigation />
-	<Sidebar v-if="false" />
+	<Sidebar v-if="sidebarState" @hideSidebar="toogleSidebar" />
 </template>
 
 <script>
+import {ref} from "vue"
+
 import Header from "@/components/Header.vue"
 import Navigation from "@/components/Navigation.vue"
 import Sidebar from "@/components/Sidebar.vue"
@@ -17,7 +19,15 @@ export default {
 		Sidebar
 	},
 	setup() {
-		return {}
+		let sidebarState = ref(false)
+		function toogleSidebar(){
+			sidebarState.value = !sidebarState.value
+		}
+
+		return {
+			sidebarState,
+			toogleSidebar
+		}
 	},
 }
 </script>
