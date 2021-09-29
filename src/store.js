@@ -17,11 +17,23 @@ const store = createStore({
 		}
 	},
 	mutations: {
-		addProduct(state,product){
+		addItem(state,product){
 			state.cart.push(product)
 		},
-		removeProduct(state,index){
+		removeItem(state,index){
 			state.cart.splice(index,1)
+		},
+		addItemQuantity(state,index){
+			let item = state.cart[index]
+			if (item.quantity < 99) {
+				item.quantity++
+			}
+		},
+		removeItemQuantity(state,index){
+			let item = state.cart[index]
+			if (item.quantity > 1) {
+				item.quantity--
+			}
 		}
 	},
 	actions: {},

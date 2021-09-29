@@ -1,6 +1,6 @@
 <template>
 	<div class="Product">
-		<router-link to="/detail">
+		<router-link :to="'/detail/' + product">
 			<img
 				class="Product__image"
 				src="@/assets/images/product.png"
@@ -8,8 +8,10 @@
 			/>
 		</router-link>
 		<span class="Product__name">Product {{ product }}</span>
-		<button class="Product__add" @click="add">+</button>
-		<span class="Product__price">S/9.99 - S/0.00</span>
+		<button class="Product__add" @click="toCart">+</button>
+		<span class="Product__price"
+			>S/{{ (product * 10).toFixed(2) }} - S/0.00</span
+		>
 		<p class="Product__description">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
 			atque?
@@ -28,15 +30,18 @@ export default {
 	setup(props) {
 		const store = useStore()
 
-		function add() {
-			store.commit("addProduct",{
-        name: `Product ${props.product}`,
-        price: props.product * 10
-      })
+		function toCart() {
+			store.commit("addItem", {
+				name: `Product ${props.product}`,
+				price: props.product * 10,
+				size: "medium",
+				type: "standart",
+				quantity: 1
+			})
 		}
 
 		return {
-			add,
+			toCart,
 		}
 	},
 }

@@ -9,13 +9,13 @@
 			<span class="Item__name">{{ item.name }}</span>
 			<span class="Item__props">Prop1, prop2, prop3.</span>
 			<div class="Item__container Item__container--quantity">
-				<button class="Item__button">+</button>
-				<span class="Item__quantity">99</span>
-				<button class="Item__button">-</button>
+				<button class="Item__button" @click="removeQuantity">-</button>
+				<span class="Item__quantity">{{ item.quantity }}</span>
+				<button class="Item__button" @click="addQuantity">+</button>
 			</div>
 		</div>
-		<span class="Item__price">S/ {{ item.price }}</span>
-		<button class="Item__button Item__button--delete">x</button>
+		<span class="Item__price">S/ {{ (item.price * item.quantity).toFixed(2) }}</span>
+		<button class="Item__button Item__button--delete" @click="removeItem">x</button>
 	</div>
 </template>
 
@@ -28,11 +28,13 @@ export default {
 		index: Number,
 		item: Object,
 	},
-	setup() {
+	setup(props) {
 		const store = useStore()
 
 		return {
-			removeItem: () => null,
+			removeItem: () => store.commit("removeItem",props.index),
+			addQuantity: ()=>store.commit("addItemQuantity",props.index),
+			removeQuantity: ()=>store.commit("removeItemQuantity",props.index),
 		}
 	},
 }

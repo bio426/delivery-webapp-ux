@@ -11,7 +11,7 @@
 		</div>
 		<div class="cart__total">
 			Total:
-			<span class="cart__price">S/ {{ cartTotal }}</span>
+			<span class="cart__price">S/ {{ cartTotal.toFixed(2) }}</span>
 			<div class="cart__container">
 				<button class="cart__button">Back</button>
 				<router-link class="cart__button cart__button--active" to="/payment"
