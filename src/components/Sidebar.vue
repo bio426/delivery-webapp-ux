@@ -1,5 +1,5 @@
 <template>
-	<aside class="Sidebar">
+	<aside class="Sidebar" @click="test">
 		<div class="Sidebar__main">
 			<div class="Sidebar__user">
 				<img
@@ -84,8 +84,13 @@ export default {
 			ctx.emit("hideSidebar")
 		}
 
+		function test(){
+			console.log("test")
+		}
+
 		return {
-			emitHideSidebar
+			emitHideSidebar,
+			test
 		}
 	}
 }

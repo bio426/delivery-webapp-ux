@@ -44,21 +44,30 @@
 					d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"
 				/>
 			</svg>
-			<span class="Navigation__cartCount"> 99 </span>
+			<span
+				class="Navigation__cartCount"
+				:class="cartLength > 0 ? 'Navigation__cartCount--active' : ''"
+			>
+				{{ cartLength }}
+			</span>
 		</router-link>
 	</nav>
 </template>
 
 <script>
+import { computed } from "vue"
 import { useRoute } from "vue-router"
+import { useStore } from "vuex"
 
 export default {
 	name: "Navigation",
 	setup() {
 		const route = useRoute()
+		const store = useStore()
 
 		return {
 			route,
+			cartLength: computed(() => store.getters.cartLength),
 		}
 	},
 }

@@ -46,10 +46,13 @@
     border: 1px solid $red;
     border-radius: 2rem;
     cursor: pointer;
+    text-decoration: none;
+    font-size: .9rem;
 
     &--active{
       background: $red;
       box-shadow: 0 0 .5rem rgba($color: $red, $alpha: 1);
+      text-align: center;
     }
   }
 }

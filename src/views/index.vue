@@ -7,7 +7,7 @@
 			<button class="index__category">Drinks</button>
 		</div>
 		<div class="index__products">
-			<Product v-for="i in 10" :key="i" />
+			<Product v-for="i in 6" :key="i" :product="i" />
 		</div>
 		<div class="index__spacer"></div>
 	</div>
