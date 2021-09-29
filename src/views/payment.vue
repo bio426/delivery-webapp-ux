@@ -171,10 +171,10 @@
 			</p>
 		</div>
 		<div class="payment__container payment__container--buttons">
-			<button class="payment__button" @click="toogleView">Back</button>
+			<button class="payment__button">Back</button>
 			<button
 				class="payment__button payment__button--active"
-				@click="fillLoader"
+				@click="toogleView"
 			>
 				Next
 			</button>
@@ -189,18 +189,14 @@ export default {
 	name: "payment",
 	setup() {
 		let full = ref(false)
-		function fillLoader() {
-			full.value = true
-		}
-
-		let view = ref(false)
+		let view = ref(true)
 		function toogleView() {
 			view.value = !view.value
+			full.value = !full.value
 		}
 
 		return {
 			full,
-			fillLoader,
 			view,
 			toogleView,
 		}

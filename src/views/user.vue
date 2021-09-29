@@ -1,7 +1,7 @@
 <template>
   <div class="user">
     <span class="user__title">Account</span>
-    <img class="user__photo" src="@/assets/images/product.png" alt="user photo">
+    <img class="user__photo" src="@/assets/images/user.png" alt="user photo">
     <div class="user__container">
       <div class="user__info">
         Your name
