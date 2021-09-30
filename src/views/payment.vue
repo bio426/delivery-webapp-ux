@@ -179,26 +179,39 @@
 				Next
 			</button>
 		</div>
+		<Modal v-if="finish" />
 	</div>
 </template>
 
 <script>
 import { ref } from "vue"
 
+import Modal from "@/components/Modal.vue"
+
 export default {
 	name: "payment",
+	components: {
+		Modal
+	},
 	setup() {
 		let full = ref(false)
 		let view = ref(true)
 		function toogleView() {
+			if(full.value){
+				finish.value = true
+				return 0
+			}
 			view.value = !view.value
 			full.value = !full.value
 		}
+
+		let finish = ref(false)
 
 		return {
 			full,
 			view,
 			toogleView,
+			finish
 		}
 	},
 }
